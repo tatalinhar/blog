@@ -8,4 +8,3 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/produto',[ProdutoController::class,'index']);Route::get('/produto', [ProdutoController::class,'index']);
