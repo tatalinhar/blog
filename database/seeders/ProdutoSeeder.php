@@ -18,5 +18,16 @@ class ProdutoSeeder extends Seeder
             'quantidade' => 10,
             'valor' => 100.10,
         ]);
+
+        DB::table('produtos')->insert([
+            'nome' => 'Tenis',
+            'quantidade' => 15,
+            'valor' => 150.15,
+        ]);
+        DB::table('produtos')->insert([
+            'nome' => 'Crocs',
+            'quantidade' => 30,
+            'valor' => 270.71,
+        ]);
     }
 }
