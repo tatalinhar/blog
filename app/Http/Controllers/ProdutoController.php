@@ -14,11 +14,12 @@ class ProdutoController extends Controller
     public function index()
     {
 
-      $produtos = Produto::all();
-      dd($produtos);
+      $produtos = Produto::orderBy('nome', 'ASC')->get();
+      return view('produto.produto_index');
 
 
-       // dd('Primeiro teste');
+
+
     }
 
     /**
