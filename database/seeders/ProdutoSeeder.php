@@ -12,10 +12,10 @@ class ProdutoSeeder extends Seeder
      */
     public function run(): void
     {
-        DB::table('users')->insert([
-            'name' => Str::random(10),
-            'email' => Str::random(10).'@example.com',
-            'password' => Hash::make('password'),
+        DB::table('produtos')->insert([
+            'nome' => 'Sapato',
+            'quantidade' => 10,
+            'valor' => 100.10,
         ]);
     }
 }
