@@ -4,6 +4,7 @@ namespace Database\Seeders;
 
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
+use Illuminate\Support\Facades\DB;
 
 class ProdutoSeeder extends Seeder
 {
@@ -16,6 +17,18 @@ class ProdutoSeeder extends Seeder
             'nome' => 'Sapato',
             'quantidade' => 10,
             'valor' => 100.10,
+        ]);
+
+        DB::table('produtos')->insert([
+            'nome' => 'Tenis',
+            'quantidade' => 15,
+            'valor' => 150.25,
+        ]);
+
+        DB::table('produtos')->insert([
+            'nome' => 'Crocs',
+            'quantidade' => 30,
+            'valor' => 290.71,
         ]);
     }
 }
