@@ -11,7 +11,12 @@ class ProdutoController extends Controller
      */
     public function index()
     {
-        dd('Primeiro teste');
+
+      $produtos = Produto::all();]
+      dd($produtos);
+
+
+       // dd('Primeiro teste');
     }
 
     /**
