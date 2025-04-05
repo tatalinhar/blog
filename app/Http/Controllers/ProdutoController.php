@@ -15,7 +15,7 @@ class ProdutoController extends Controller
     {
 
       $produtos = Produto::orderBy('nome', 'ASC')->get();
-      return view('produto.produto_index');
+      return view('produto.produto_index', ['produtos' => $produtos]);
 
 
 
