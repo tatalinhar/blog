@@ -25,9 +25,11 @@ tr:nth-child(even) {
 
 <table>
   <tr>
-    <th>Company</th>
-    <th>Contact</th>
-    <th>Country</th>
+    <th>Id</th>
+    <th>Nome</th>
+    <th>Quantidade</th>
+    <th>Valor</th>
+
   </tr>
   <tr>
     <td>Alfreds Futterkiste</td>
