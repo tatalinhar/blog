@@ -25,18 +25,18 @@ tr:nth-child(even) {
 
 <table>
   <tr>
-    <th>Id</th>
-    <th>Nome</th>
-    <th>Quantidade</th>
-    <th>Valor</th>
+    <th>id</th>
+    <th>nome</th>
+    <th>quantidade</th>
+    <th>valor</th>
 
   </tr>
   @foreach ($produtos as $value )
 
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
+    <td>{{ $value->id             }}</td>
+    <td>{{ $value->nome           }}</td>
+    <td>{{ $value->quantidade     }}</td>
+    <td>{{ $value->valor            }}</td>
 
   @endforeach
   <
