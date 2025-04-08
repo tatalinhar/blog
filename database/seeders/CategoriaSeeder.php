@@ -14,16 +14,16 @@ class CategoriaSeeder extends Seeder
     public function run(): void
     {
         DB::table('categorias')->insert([
-            'name' => 'sapato',
+            'nome' => 'sapato'
         ]);
 
         DB::table('categorias')->insert([
-            'name' => 'meinha',
+            'nome' => 'meinha'
         ]);
 
 
         DB::table('categorias')->insert([
-            'name' => 'botas',
+            'nome' => 'botas'
         ]);
     }
 }
