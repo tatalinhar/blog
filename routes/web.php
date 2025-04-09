@@ -8,6 +8,9 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/produto', [ProdutoController::class,'index'])->name('home');
+Route::get('/produto', [ProdutoController::class,'index']);
+Auth::routes();
 
-Route::get('/categoria', [CategoriaController::class,'index'])->name('categoria.index');
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+Route::get('/categoria', [CategoriaController::class, 'index'])->name('categoria.index');
