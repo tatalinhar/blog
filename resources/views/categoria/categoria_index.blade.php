@@ -9,7 +9,9 @@
 
                 <div class="card-body">
 
-                    <table>
+                    <a class="btn btn-success" href="{{ url('categoria/create') }}">CRIAR</a>
+
+                    <table class="table">
                         <tr>
                           <th>ID</th>
                           <th>Nome</th>
@@ -22,7 +24,7 @@
                         <tr>
                             <td>{{ $value->id }}</td>
                             <td>{{ $value->nome }}</td>
-                            <td><a href="{{ url('categoria/' . $value->id) }}">Visualizar</a></td>
+                            <td><a class="btn btn-info" href="{{ url('categoria/' . $value->id) }}">Visualizar</a></td>
 
                           </tr>
 

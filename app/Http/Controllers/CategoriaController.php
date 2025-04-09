@@ -22,7 +22,7 @@ class CategoriaController extends Controller
      */
     public function create()
     {
-        //
+        return view('categoria.categoria_create');
     }
 
     /**
@@ -30,7 +30,21 @@ class CategoriaController extends Controller
      */
     public function store(Request $request)
     {
-        //
+
+        $messages = [
+            'nome.required' => 'O nome é um campo obrigatório!',
+        ];
+
+        $validated = $request->validate([
+            'nome' => 'required|min:5',
+
+        ], $messages);
+
+
+        //dd($request->all());
+        $categoria= new Categoria();
+        $categoria->nome = $request->nome;
+        $categoria->save();
     }
 
     /**
