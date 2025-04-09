@@ -14,7 +14,7 @@ class CategoriaController extends Controller
     {
         $categorias = Categoria::orderBy('nome', 'ASC')->get();
          return view('categoria.categoria_index');
-
+    }
     /**
      * Show the form for creating a new resource.
      */
