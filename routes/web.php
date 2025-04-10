@@ -14,3 +14,5 @@ Route::get('/produto', [ProdutoController::class,'index']);
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
 Route::get('/categoria', [CategoriaController::class, 'index'])->name('categoria.index');
+
+Route:get('/categoria/{id}',[CategoriaController::class,'show'])->name('categoria.show');
