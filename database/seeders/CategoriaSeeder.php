@@ -18,6 +18,9 @@ class CategoriaSeeder extends Seeder
             'created_at' => now(),
             'update_at' => now(),
 
+        ]);
+
+
         DB::table('categorias')->insert([
             'nome' => 'meinha'
             'created_at' => now(),
