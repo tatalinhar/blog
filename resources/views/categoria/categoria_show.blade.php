@@ -11,6 +11,15 @@
 
 
                     <p><strong>Id: </strong>{{ $categoria->id }}</p>
+
+
+
+
+
+
+
+
+
                 </div>
             </div>
         </div>
