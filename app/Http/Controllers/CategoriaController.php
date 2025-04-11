@@ -28,6 +28,16 @@ class CategoriaController extends Controller
      */
     public function store(Request $request)
     {
+        $messages = [
+
+    'nome.required' => 'O nome é um campo obrigatório!' ,
+          ];
+            $validated = $request->validade([
+                'nome' => 'required|min.5',
+            ], $messages );
+
+
+
 
         //dd($request->all());
         $categoria = new Categoria();
