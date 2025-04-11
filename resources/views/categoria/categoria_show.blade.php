@@ -10,11 +10,10 @@
                 <div class="card-body">
 
 
-                    <p><strong>Id: </strong>{{ $categoria->id  }}</p>
-                    <p><strong>Nome: </strong>{{ $categoria->nome  }}</p>
-                    <p><strong>Criaçâo: </strong>{{ $categoria->created_at  }}</p>
-                    <p><strong>Atualização: </strong>{{ $categoria->updated_at  }}</p>
-
+                    <p><strong>Id: </strong>{{ $categoria->id }}</p>
+                    <p><strong>Nome: </strong>{{ $categoria->nome }}</p>
+                    <p><strong>Criação: </strong>{{ $categoria->created_at }}</p>
+                    <p><strong>Atualização: </strong>{{ $categoria->updated_at }}</p>
 
 
 
