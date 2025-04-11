@@ -22,3 +22,5 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 Route::get('/categoria', [CategoriaController::class, 'index'])->name('categoria.index');
 
 Route::get('/categoria/{id}',[CategoriaController::class,'show'])->name('categoria.show');
+
+Route::get('/categoria/create', [CategoriaController::class, 'create'])->name('categoria.create');
