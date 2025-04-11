@@ -11,7 +11,7 @@
 
                <p><strong>Id: </strong>{{ $postagem->id }}</p>
                <p><strong>Título: </strong>{{ $postagem->titulo }}</p>
-               <p><strong>Categoria: </strong>{{ $postagem->categoria }}</p>
+               <p><strong>Categoria: </strong>{{ $postagem->categoria->nome }}</p>
                <p><strong>Criação: </strong>{{ $postagem->created_at }}</p>
                <p><strong>Atualização: </strong>{{ $postagem->updated_at }}</p>
 

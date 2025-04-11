@@ -22,6 +22,16 @@
                 <form action="{{url('postagem')}}" method="post">
                         @csrf
 
+
+                        <select name="categoria_id" class="form-control" >
+
+                            @foreach ($categorias as $value )
+                            <option value="{{$value->id}}">{{$value->nome}}</option>
+                            @endforeach
+
+
+                          </select>
+
                         <label>Título:</label>
                         <input type="text" name="titulo" class="form-control">
 
