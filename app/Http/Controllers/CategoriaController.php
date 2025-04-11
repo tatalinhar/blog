@@ -33,6 +33,8 @@ class CategoriaController extends Controller
         $categoria = new Categoria();
         $catagoria->nome = $request->nome;
         $categoria->save();
+
+    return redirect()->route('categoria.index')->with('sucess', 'Categoria cadastrada com sucesso!');
     }
 
     /**
