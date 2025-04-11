@@ -5,7 +5,7 @@
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
-                <div class="card-header">Categoria</div>
+                <div class="card-header">Postagem</div>
 
                 <script>
                     function ConfirmDelete(){
@@ -15,24 +15,28 @@
 
                 <div class="card-body">
 
-                    <a class="btn btn-success" href="{{ url('categoria/create') }}">CRIAR</a>
+                    <a class="btn btn-success" href="{{ url('postagem/create') }}">CRIAR</a>
 
                     <table class="table">
                         <tr>
                           <th>ID</th>
-                          <th>Nome</th>
+                          <th>Categoria</th>
+                          <th>Titulo</th>
                           <th>Ações</th>
+
+
                         </tr>
 
-                        @foreach ($categorias as $value )
+                        @foreach ($postagens as $value )
                         <tr>
                             <td>{{ $value->id }}</td>
-                            <td>{{ $value->nome }}</td>
+                            <td>{{ $value->categoria_id }}</td>
+                            <td>{{ $value->titulo }}</td>
                             <td>
 
-                                <a class="btn btn-info" href="{{ url('categoria/' . $value->id) }}">Visualizar</a>
-                                <a class="btn btn-warning" href='{{url('categoria/' . $value->id . '/edit') }}'>EDITAR</a>
-                                <form action="{{ url('categoria/' . $value->id) }}" method="post" onsubmit='return ConfirmDelete()'>
+                                <a class="btn btn-info" href="{{ url('postagem/' . $value->id) }}">Visualizar</a>
+                                <a class="btn btn-warning" href='{{url('postagem/' . $value->id . '/edit') }}'>EDITAR</a>
+                                <form action="{{ url('postagem/' . $value->id) }}" method="post" onsubmit='return ConfirmDelete()'>
                                     @method('DELETE')
                                     @csrf
 
