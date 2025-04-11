@@ -13,11 +13,10 @@ Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
+ /////
 
 Route::get('/produto', [ProdutoController::class,'index']);
 
-
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
 Route::get('/categoria', [CategoriaController::class, 'index'])->name('categoria.index');
 

@@ -29,10 +29,10 @@ class CategoriaController extends Controller
     public function store(Request $request)
     {
 
-        dd($request->all());
-       // $categoria = new Categoria();
-       // $catagoria->nome = $request->nome;
-       // $categoria->save();
+        //dd($request->all());
+        $categoria = new Categoria();
+        $catagoria->nome = $request->nome;
+        $categoria->save();
     }
 
     /**
