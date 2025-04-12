@@ -31,3 +31,6 @@ Route::get('/categoria/{id}',  [CategoriaController::class,'show'])->name('categ
 
 Route::get('/categoria/{id}/edit',  [CategoriaController::class,'edit'])->name('categoria.edit');
 
+Route::put('/categoria/{id}', [CategoriaController::class, 'update'])->name('categoria.update');
+
+
