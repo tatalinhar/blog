@@ -7,51 +7,41 @@
             <div class="card">
                 <div class="card-header">Categoria</div>
 
-                <script>
-                    function ConfirmDelete() {
-                        return confirm('Tem certeza que deseja excluir este registro?');
-                    }
-                </script>
-
                 <div class="card-body">
 
-                    <a class="btn btn-success" href="{{ url('categoria/create') }}">CRIAR</a>
+          <a class="btn btn-success" href="{{ url('categoria/create')}}">CRIAR</a>
 
-                    @if (session('message'))
-                        <div class="alert alert-success">
-                            {{ session('message') }}
-                        </div>
-                    @endif
 
-                    <table class="table">
+        <table class='table'>
+                <tr>
+                <th>Id</th>
+                <th>Nome</th>
+                <th>Acoes</th>
 
-                        <tr>
-                          <th>ID</th>
-                          <th>Nome</th>
-                          <th>Ações</th>
-                        </tr>
+                </tr>
+              @foreach ($categorias as $value)
 
-                        @foreach ($categorias as $value)
-                          <tr>
-                            <td>{{ $value->id }}</td>
-                            <td>{{ $value->nome }}</td>
-                            <td>
-                                <a class="btn btn-info" href="{{ url('categoria/' . $value->id) }}">Visualizar</a>
-                                <a class="btn btn-warning" href='{{ url('categoria/' . $value->id . '/edit') }}'>Editar</a>
-                                <form action="{{ url('categoria/' . $value->id) }}" method="post" onsubmit='return ConfirmDelete()'>
-                                    @method('DELETE')
-                                    @csrf
-                                    <button type="submit" class="btn btn-danger">EXCLUIR</button>
-                                </form>
+              <tr>
+                <td>{{ $value->id }}</td>
+                <td>{{ $value->nome }}</td>
+                <td>
+                    <a class="btn btn-info" href="{{  url('categoria/' . $value->id) }}">Visualizar</a></td>
+
+                 <a  class="btn btn-warning" href="{{url('categoria/' . $value->id . '/edit')  }}">EDITAR</a>
+                 <form action="{{ url('categoria/' . $value->id) }}" method="post" onsubmit='return ConfirmDelete()'>
+                    @method('DELETE')
+                    @csrf
+                    <button type="submit" class="btn btn-danger">EXCLUIR</button>
+                </tr>
+              @endforeach
 
 
 
-                            </td>
-                          </tr>
-                        @endforeach
 
-                    </table>
 
+
+
+        </table>
                 </div>
             </div>
         </div>
