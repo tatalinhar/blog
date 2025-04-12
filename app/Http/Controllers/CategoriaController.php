@@ -28,23 +28,21 @@ class CategoriaController extends Controller
      */
     public function store(Request $request)
     {
+
         $messages = [
+            'nome.required' => 'O nome é um campo obrigatório!',
+        ];
 
-    'nome.required' => 'O nome é um campo obrigatório!' ,
-          ];
-            $validated = $request->validade([
-                'nome' => 'required|min.5',
-            ], $messages );
-
-
-
+        $validated = $request->validate([
+            'nome' => 'required|min:5',
+        ], $messages);
 
         //dd($request->all());
         $categoria = new Categoria();
-        $catagoria->nome = $request->nome;
+        $categoria->nome = $request->nome;
         $categoria->save();
 
-    return redirect()->route('categoria.index')->with('sucess', 'Categoria cadastrada com sucesso!');
+        return redirect()->route('categoria.index')->with('message', 'Categoria cadastrada com sucesso!');
     }
 
     /**
@@ -61,7 +59,8 @@ class CategoriaController extends Controller
      */
     public function edit(string $id)
     {
-        //
+        $categoria = Categoria::find($id);
+        return view('categoria.categoria_edit', compact('categoria'));
     }
 
     /**
@@ -69,7 +68,19 @@ class CategoriaController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        //
+        $messages = [
+            'nome.required' => 'O nome é um campo obrigatório!',
+        ];
+
+        $validated = $request->validate([
+            'nome' => 'required|min:5',
+        ], $messages);
+
+        $categoria = Categoria::find($id);
+        $categoria->nome = $request->nome;
+        $categoria->save();
+
+        return redirect()->route('categoria.index')->with('message', 'Categoria atualizada com sucesso!');
     }
 
     /**
@@ -77,6 +88,9 @@ class CategoriaController extends Controller
      */
     public function destroy(string $id)
     {
-        //
+        $categoria = Categoria::find($id);
+        $categoria->delete();
+
+        return redirect()->route('categoria.index')->with('message', 'Categoria excluída com sucesso!');
     }
 }
