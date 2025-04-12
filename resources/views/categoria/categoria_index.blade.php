@@ -24,8 +24,10 @@
               <tr>
                 <td>{{ $value->id }}</td>
                 <td>{{ $value->nome }}</td>
-                <td><a class="btn btn-info" href="{{  url('categoria/' . $value->id) }}">Visualizar</a></td>
-
+                <td>
+                    <a class="btn btn-info" href="{{  url('categoria/' . $value->id) }}">Visualizar</a></td>
+                    <a  class="btn btn-warning" href="{{url('categoria/' . $value->id . '/edit')  }}">EDITAR</a>
+                    @method('DELETE')
                 </tr>
               @endforeach
 
