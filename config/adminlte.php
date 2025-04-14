@@ -318,7 +318,12 @@ return [
         [
             'text' => 'Categoria',
             'url' => 'categoria',
-           // 'can' => 'manage-blog',
+            //'can' => 'manage-blog',
+        ],
+        [
+            'text' => 'Postagem',
+            'url' => 'postagem',
+            //'can' => 'manage-blog',
         ],
         [
             'text' => 'pages',
