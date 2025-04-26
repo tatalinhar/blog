@@ -2,9 +2,9 @@
 
 @section('content')
 
-<link rel="stylesheet" href="{{url ("/richtexteditor/rte_theme_default.css") }}" />
-<script type="text/javascript" src="{{url ("/richtexteditor/rte.js") }}"></script>
-<script type="text/javascript" src="{{url ('/richtexteditor/plugins/all_plugins.js') }}"></script>
+<link rel="stylesheet" href="{{ url("/richtexteditor/rte_theme_default.css") }}" />
+<script type="text/javascript" src="{{ url("/richtexteditor/rte.js") }}"></script>
+<script type="text/javascript" src="{{ url('/richtexteditor/plugins/all_plugins.js') }}"></script>
 
 
 <div class="container">
@@ -42,9 +42,9 @@
                         <input type="text" name="titulo" class="form-control">
 
                         <label>Descrição:</label>
-                        <textarea id="inp_editor1"  name="descricao" rows="5" cols="33">
+                        <textarea id="inp_editor1"  name="descricao" rows="5" cols="33" class="form-control">
 
-                            </textarea>
+                        </textarea>
 
                         <button type="submit" class="btn btn-primary">ENVIAR</button>
                     </form>
