@@ -27,8 +27,9 @@
 								<li>
 									<a href="#">Categorias</a>
 									<ul>
-
-										<li><a href="#">Lorem ipsum dolor</a></li>
+                                        @foreach ($categorias as $value )
+                                        <li><a href="{{ url('/PostagemByCategoriaId/' . $value->id) }}">{{ $value->nome }}</a></li>
+                                        @endforeach
 
                                     </ul>
                                 </li>
