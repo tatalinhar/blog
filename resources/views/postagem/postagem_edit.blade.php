@@ -41,7 +41,7 @@
                         <input type="text" value="{{ $postagem->titulo }}" name="titulo" class="form-control">
 
                         <label>Descrição:</label>
-                        <textarea name="descricao" rows="5" cols="33" class="form-control">
+                        <textarea id="inp_editor1" name="descricao" rows="5" cols="33" class="form-control">
                             {{ $postagem->descricao }}
                         </textarea>
 
