@@ -4,6 +4,8 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\CategoriaController;
 use App\Http\Controllers\PostagemController;
 use App\Http\Controllers\SiteController;
+use App\Http\Controllers\UserController;
+
 
 //Route::get('/', function () {
   //  return view('welcome');
@@ -20,6 +22,8 @@ Route::get('/PostagemByAutorId/{id}', [SiteController::class, 'PostagemByAutorId
 
 
 Auth::routes();
+
+Route::middleware(['auth'])->group(function () {
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 //-----------------------------------------------------------------
@@ -56,3 +60,13 @@ Route::get('/postagem/{id}/edit' , [PostagemController::class, 'edit'])->name('p
 Route::put('/postagem/{id}' , [PostagemController::class, 'update'])->name('postagem.update');
 
 Route::delete('/postagem/{id}', [PostagemController::class, 'destroy'])->name('postagem.destroy');
+
+
+//---------------------------------------------------------------------------------
+//---------------------------------------------------------------------------------
+
+  Route::get('admin/alterarSenha', UserController::class, 'alterarSenha')->name('admin.alterarSenha');
+
+
+});
+
