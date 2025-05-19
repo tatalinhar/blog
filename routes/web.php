@@ -65,7 +65,8 @@ Route::delete('/postagem/{id}', [PostagemController::class, 'destroy'])->name('p
 //---------------------------------------------------------------------------------
 //---------------------------------------------------------------------------------
 
-  Route::get('admin/alterarSenha', UserController::class, 'alterarSenha')->name('admin.alterarSenha');
+  Route::get('admin/alterarSenha', [UserController::class, 'alterarSenha'])->name('admin.alterarSenha');
+  Route::put('admin/updateSenha', [UserController::class, 'updateSenha'])->name('admin.updateSenha');
 
 
 });

@@ -3,12 +3,52 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Hash;
 
 class UserController extends Controller
 {
     public function alterarSenha(){
         return view('user.alterarSenha');
     }
+
+     public function updateSenha(Request $request){
+        //dd($request->all());
+
+        //password_old
+        //password_new
+        //password_new2
+
+        $messages = [
+            'nome.required' => 'O nome é um campo obrigatório!',
+             'password_old.required' => 'A senha antiga é um campo obrigatório!'
+             'password_new.required' => 'A senha nova é um campo obrigatório!'
+             'password_new2.required' => 'A senha nova (repetir) é um campo obrigatório!'
+        ];
+
+        $validated = $request->validate([
+            'password_old' => 'required|min:5',
+            'password_new' => 'required|min:5|same:password_new2',
+            'password_new2' => 'required|min:5',
+
+        ], $messages);
+
+        //dd(auth()->user()->password);
+
+        if (Hash::check($request->password_old, auth()->user()->password)) {
+            //dd('É igual!');
+            $user = auth()->user();
+            $user->password = Hash::make($request->password_new);
+            $user->save();
+
+            return redirect()->back()->with('success', 'Senha alterada com sucesso!');
+
+        }else{
+            return redirect()->back()->with('success', 'A senha antiga não confere!');
+        }
+
+     }
+
+
     public function index()
     {
         //

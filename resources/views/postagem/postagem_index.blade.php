@@ -17,6 +17,12 @@
 
                     <a class="btn btn-success" href="{{ url('postagem/create') }}">CRIAR</a>
 
+                    @if(session('message'))
+                        <div class="alert alert-success">
+                            {{ session('message')  }}
+                        </div>
+                        @endif
+
                     <table class="table">
                         <tr>
                           <th>ID</th>
