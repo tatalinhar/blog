@@ -18,6 +18,12 @@
              </div>
              @endif
 
+             @if(session('message'))
+             <div class="alert alert-success">
+                 {{ session('message')  }}
+             </div>
+             @endif
+
 
                 <form action="{{url('admin/updateSenha')}}" method="post">
                     @method('PUT')

@@ -20,9 +20,9 @@ class UserController extends Controller
 
         $messages = [
             'nome.required' => 'O nome é um campo obrigatório!',
-             'password_old.required' => 'A senha antiga é um campo obrigatório!'
-             'password_new.required' => 'A senha nova é um campo obrigatório!'
-             'password_new2.required' => 'A senha nova (repetir) é um campo obrigatório!'
+             'password_old.required' => 'A senha antiga é um campo obrigatório!',
+             'password_new.required' => 'A senha nova é um campo obrigatório!',
+             'password_new2.required' => 'A senha nova (repetir) é um campo obrigatório!',
         ];
 
         $validated = $request->validate([
